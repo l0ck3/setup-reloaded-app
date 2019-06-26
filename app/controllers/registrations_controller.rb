@@ -23,7 +23,7 @@ class RegistrationsController < ApplicationController
 
   def update
     if @student.update_attributes(student_params)
-      redirect_to edit_student_path(@student)
+      redirect_to edit_students_path
     else
       render :edit
     end

@@ -2,12 +2,14 @@ class StudentsController < ApplicationController
   before_action :find_student, only: [:edit, :update]
 
   def edit
-    content = FetchContentService.new.(current_student.os, 0)
+    @step = @student.steps.count
+    content = FetchContentService.new.(current_student.os, @step)
     @title = content[:title]
     @content = content[:body]
   end
 
   def update
+    fail
   end
 
   private
