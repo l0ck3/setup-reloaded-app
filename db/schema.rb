@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_26_110811) do
+ActiveRecord::Schema.define(version: 2019_06_26_141422) do
 
   create_table "batches", force: :cascade do |t|
     t.string "slug"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 2019_06_26_110811) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "full_name"
     t.json "steps"
     t.integer "batch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "gender"
+    t.string "os"
     t.index ["batch_id"], name: "index_students_on_batch_id"
   end
 

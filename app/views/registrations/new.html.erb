@@ -1,0 +1,7 @@
+<h1>JUMP ON BOARD</h1>
+
+<%= simple_form_for @student, url: batch_registrations_path(@batch.slug) do |f| %>
+  <%= f.input :full_name %>
+  <%= f.input :gender, collection: Student::GENDERS, as: :radio_buttons %>
+  <%= f.submit %>
+<% end %>

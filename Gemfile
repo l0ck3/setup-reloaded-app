@@ -68,3 +68,5 @@ gem "kramdown", "~> 2.1"
 gem "simple_form", "~> 4.1"
 
 gem "front_matter_parser", "~> 0.2.1"
+
+gem "komponent", "~> 2.2"
