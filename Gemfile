@@ -60,3 +60,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'webpacker', '~> 4.0'
+
+gem "kramdown", "~> 2.1"
+
+gem "simple_form", "~> 4.1"
+
+gem "front_matter_parser", "~> 0.2.1"
