@@ -1,13 +1,17 @@
 <h1>Welcome to the setup</h1>
+<p>This is the first day of your bootcamp where you’ll be guided through different steps to get you ready to start the
+  bootcamp.
+  First, choose your character and enter your name.</p>
+
 <div class="select-gender">
+  <%= image_tag 'GuyFront', class: 'gender-pick', data: { gender: 'guy' } %>
   <%= image_tag 'GirlFront', class: 'gender-pick', data: { gender: 'girl' } %>
   <%= image_tag 'AlienFront', class: 'gender-pick', data: { gender: 'alien' } %>
-  <%= image_tag 'GuyFront', class: 'gender-pick', data: { gender: 'guy' } %>
 </div>
 
 <%= simple_form_for @student, url: batch_registrations_path(@batch.slug) do |f| %>
-  <%= f.label do %>
-  <%= f.input :gender, collection: Student::GENDERS, as: :radio_buttons %>
-  <%= f.input :full_name %>
-  <%= f.submit %>
+  <%= f.input :gender, collection: Student::GENDERS, as: :radio_buttons, wrapper_html: { class: "hidden" } %>
+  <%= f.label :full_name, 'Enter you (real) name'%>
+  <%= f.input :full_name, label: false %>
+  <%= f.submit "Let's do this !", class: "button button-green" %>
 <% end %>

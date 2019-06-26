@@ -1,6 +1,12 @@
-<h1>JUMP ON BOARD</h1>
+<h1>Jump on board</h1>
+
+<div class="select-gender">
+  <%= image_tag 'apple', class: 'gender-pick', data: { gender: 'macos' } %>
+  <%= image_tag 'window', class: 'gender-pick', data: { gender: 'windows' } %>
+  <%= image_tag 'penguin', class: 'gender-pick', data: { gender: 'linux' } %>
+</div>
 
 <%= simple_form_for @student, url: registration_path(@student) do |f| %>
-  <%= f.input :os, collection: Student::OS, as: :radio_buttons %>
-  <%= f.submit %>
+  <%= f.input :os, collection: Student::OS, as: :radio_buttons, wrapper_html: { class: "hidden" } %>
+  <%= f.submit "Let's gooo", class: "button button-green" %>
 <% end %>

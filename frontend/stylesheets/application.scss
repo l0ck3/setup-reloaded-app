@@ -1,9 +1,12 @@
-// @import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap';
 @import 'layout/layout';
+@import "commons";
 @import 'components/title';
 @import 'components/gender-pick';
 @import "components/button";
+@import "components/form";
 
 body {
   background-color: #F5F5F5;
+  font-family: 'Circular Medium'
 }
