@@ -1,8 +1,8 @@
-<h1>CREATE A NEW BATCH</h1>
+<h1>Create a new batch</h1>
 
 <%= simple_form_for @batch do |f|%>
-
-  <%= f.input :slug %>
-  <%= f.submit %>
+  <%= f.label :slug, 'Name of the batch' %>
+  <%= f.input :slug, label: false %>
+  <%= f.submit "Let's setup!", class: 'button button-blue' %>
 
 <% end %>
