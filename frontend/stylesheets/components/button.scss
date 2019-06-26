@@ -1,0 +1,55 @@
+.button {
+  font-family: "Circular Bold";
+  opacity: 0.9;
+  padding: 5px 25px 5px 25px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    opacity: 1;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.button-green {
+  background-color: #79E15F;
+}
+
+.button-blue {
+  background-color: #5FBAE1;
+}
+.problem {
+  text-decoration: underline;
+  color: black;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    color: black;
+  }
+}
+
+.flexbox-buttons {
+  height: 150px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  background-color: #C4C4C4;
+  color: white;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #FD1015;
+  }
+}
