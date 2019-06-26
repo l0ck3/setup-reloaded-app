@@ -2,4 +2,3 @@
 
 import 'bootstrap';
 import 'stylesheets/application';
-import 'components/index';

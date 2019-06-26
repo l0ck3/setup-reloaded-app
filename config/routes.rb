@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     get 'edit', to: 'registrations#edit', on: :collection
   end
 
-  resources :students, only: [:edit, :update]
+  resources :students, only: [] do
+    get 'edit', to: 'students#edit', on: :collection
+    patch 'update', to: 'students#update', on: :collection
+  end
 
   root to: 'batches#new'
 end
