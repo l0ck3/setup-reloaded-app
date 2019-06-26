@@ -11,6 +11,9 @@ class FetchContentService
 
   def call(os, step)
     step_info = @steps[os.downcase][step]
+
+    return unless step_info.present?
+
     content = open(step_info['link']) { |f| f.read }
 
     {

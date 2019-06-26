@@ -5,3 +5,22 @@
   <br>
   <strong><%= new_batch_registration_url(@batch.slug) %></strong>
 </p>
+
+<h2>Students progression</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Current Step</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @batch.students.each do |student| %>
+      <tr>
+        <td><%= student.full_name %></td>
+        <td><%= student.steps.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

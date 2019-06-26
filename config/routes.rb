@@ -1,3 +1,5 @@
+# TODO: Routes are a mess. Clean that
+
 Rails.application.routes.draw do
   resources :batches, except: [:new, :destroy, :edit, :update], param: :slug do
     resources :registrations, only: [:new, :create]
