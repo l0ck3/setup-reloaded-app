@@ -16,10 +16,12 @@ class FetchContentService
     return unless step_info.present?
 
     content = open(step_info['link']) { |f| f.read }
+    troubleshooting = (tbs = step_info['troubleshooting']).present? ? open(step_info['troubleshooting']) { |f| f.read } : ''
 
     {
       title: step_info['name'],
       body: Kramdown::Document.new(content).to_html,
+      troubleshooting: Kramdown::Document.new(troubleshooting).to_html,
       total: os_steps.count
     }
   end

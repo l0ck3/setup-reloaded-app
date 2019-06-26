@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
     if content.present?
       @title = content[:title]
       @content = content[:body]
+      @troubleshooting = content[:troubleshooting]
     else
       redirect_to root_path # TODO: redirect to a congrats page instead
     end
