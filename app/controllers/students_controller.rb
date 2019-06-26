@@ -15,8 +15,9 @@ class StudentsController < ApplicationController
 
   # TODO: Implement this better when we'll not be in a rush
   def update
-    @step = params[:step]
-    current_student.steps << @step
+    @step = params[:step].to_i
+    content = FetchContentService.new.(current_student.os, @step)
+    current_student.steps << {title: content[:title] }
     current_student.save!
 
     redirect_to edit_students_path
