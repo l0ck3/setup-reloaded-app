@@ -4,12 +4,23 @@ class StudentsController < ApplicationController
   def edit
     @step = @student.steps.count
     content = FetchContentService.new.(current_student.os, @step)
-    @title = content[:title]
-    @content = content[:body]
+
+    if content.present?
+      @title = content[:title]
+      @content = content[:body]
+    else
+      redirect_to root_path # TODO: redirect to a congrats page instead
+    end
   end
 
+  # TODO: Implement this better when we'll not be in a rush
   def update
-    fail
+    @step = params[:step].to_i
+    content = FetchContentService.new.(current_student.os, @step)
+    current_student.steps << {title: content[:title] }
+    current_student.save!
+
+    redirect_to edit_students_path
   end
 
   private

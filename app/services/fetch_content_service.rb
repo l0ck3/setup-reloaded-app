@@ -10,12 +10,17 @@ class FetchContentService
   end
 
   def call(os, step)
-    step_info = @steps[os.downcase][step]
+    os_steps = @steps[os.downcase]
+    step_info = os_steps[step]
+
+    return unless step_info.present?
+
     content = open(step_info['link']) { |f| f.read }
 
     {
-      title: step_info['title'],
-      body: Kramdown::Document.new(content).to_html
+      title: step_info['name'],
+      body: Kramdown::Document.new(content).to_html,
+      total: os_steps.count
     }
   end
 

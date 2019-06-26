@@ -15,6 +15,9 @@ class BatchesController < ApplicationController
   end
 
   def show
+    content = FetchContentService.new.('macos', 0) # TODO: Implement another service for fetching the count info
+
+    @total_steps = content[:total]
     @batch = Batch.find_by!(slug: params[:slug])
   end
 
