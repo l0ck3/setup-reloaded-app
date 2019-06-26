@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+
+@font-face {
+  font-family: "Circular Black";
+  src: url(CircularStd-Black.otf);
+}
+
+@font-face {
+  font-family: "Circular Black Italic";
+  src: url(CircularStd-BlackItalic.otf);
+}
+
+@font-face {
+  font-family: "Circular Bold";
+  src: url(CircularStd-Bold.otf);
+}
+
+@font-face {
+  font-family: "Circular Bold Italic";
+  src: url(CircularStd-BoldItalic.otf);
+}
+
+@font-face {
+  font-family: "Circular Book";
+  src: url(CircularStd-Book.otf);
+}
+
+@font-face {
+  font-family: "Circular Book Italic";
+  src: url(CircularStd-BookItalic.otf);
+}
+
+@font-face {
+  font-family: "Circular Medium";
+  src: url(CircularStd-Medium.otf);
+}
+
+@font-face {
+  font-family: "Circular Medium Italic";
+  src: url(CircularStd-MediumItalic.otf);
+}

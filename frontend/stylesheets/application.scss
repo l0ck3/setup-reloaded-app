@@ -1,2 +1,9 @@
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
+@import 'layout/layout';
+@import 'components/title';
+@import 'components/gender-pick';
 @import "components/button";
+
+body {
+  background-color: #F5F5F5;
+}

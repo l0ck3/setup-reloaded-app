@@ -1,7 +1,13 @@
-<h1>JUMP ON BOARD</h1>
+<h1>Welcome to the setup</h1>
+<div class="select-gender">
+  <%= image_tag 'GirlFront', class: 'gender-pick', data: { gender: 'girl' } %>
+  <%= image_tag 'AlienFront', class: 'gender-pick', data: { gender: 'alien' } %>
+  <%= image_tag 'GuyFront', class: 'gender-pick', data: { gender: 'guy' } %>
+</div>
 
 <%= simple_form_for @student, url: batch_registrations_path(@batch.slug) do |f| %>
-  <%= f.input :full_name %>
+  <%= f.label do %>
   <%= f.input :gender, collection: Student::GENDERS, as: :radio_buttons %>
+  <%= f.input :full_name %>
   <%= f.submit %>
 <% end %>
