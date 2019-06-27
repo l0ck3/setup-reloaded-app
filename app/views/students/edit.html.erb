@@ -1,6 +1,10 @@
-<%= render 'navbar' %>
+<%= render 'navbar', student: @student %>
 
-<%= @content.html_safe  %>
+
+<h1><%= @title %></h1>
+<div class="markup-content">
+  <%= @content.html_safe  %>
+</div>
 
   <div class="tooltips">
     <a href="#" class="question" tooltip="Some more information about this step" tooltip_position="left">
