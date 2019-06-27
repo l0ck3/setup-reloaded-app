@@ -2,5 +2,5 @@
 
 <%= simple_form_for @student, url: registration_path(@student) do |f| %>
   <%= f.input :os, collection: Student::OS, as: :radio_buttons %>
-  <%= f.submit %>
+  <%= f.button :submit, "I'm going on an adventure!", class: "button button-green" %>
 <% end %>

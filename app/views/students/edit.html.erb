@@ -3,7 +3,8 @@
 <%= @content.html_safe  %>
 
 
-  <a href="#" class="question">?</a>
+
+  <div tooltip=“TEXT” tooltip_position="left"><a href="#" class="question">?</a></div>
   <div class="flexbox-buttons">
     <%= link_to "I've completed this step!", students_path(step: 0), method: :patch, class: 'button button-green' %>
     <a href="#" class="problem">Problem ? Have a look at the most common issues</a>
