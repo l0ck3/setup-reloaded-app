@@ -28,6 +28,9 @@
     opacity: 1;
     color: black;
   }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 .flexbox-buttons {
@@ -38,13 +41,24 @@
   flex-direction: column;
 }
 
-.question {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.tooltips {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.question {
+  text-decoration: none;
+}
+
+.questionmark {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   border-radius: 50%;
   font-size: 20px;
   height: 50px;
