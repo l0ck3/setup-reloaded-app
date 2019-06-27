@@ -2,6 +2,7 @@ class RegistrationsController < ApplicationController
 
   before_action :find_batch, only: [:new, :create]
   before_action :find_student, only: [:edit, :update]
+  before_action :count_total_steps, only: [:edit]
 
   def new
     @student = Student.new
@@ -19,6 +20,7 @@ class RegistrationsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -41,6 +43,11 @@ class RegistrationsController < ApplicationController
 
   def student_params
     params.require(:student).permit(:full_name, :gender, :os)
+  end
+
+  def count_total_steps
+    content = FetchContentService.new.('macos', 0) # TODO: Implement another service for fetching the count info
+    @total_steps = content[:total]
   end
 
 end
