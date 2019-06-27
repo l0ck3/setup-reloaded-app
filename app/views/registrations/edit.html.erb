@@ -1,9 +1,29 @@
+<%= render 'students/navbar'%>
 <h1>Jump on board</h1>
 
+<p class="center">Choose your companion for the rest of the adventure</p>
+
 <div class="select-gender">
-  <%= image_tag 'apple', class: 'gender-pick', data: { gender: 'macos' } %>
-  <%= image_tag 'window', class: 'gender-pick', data: { gender: 'windows' } %>
-  <%= image_tag 'penguin', class: 'gender-pick', data: { gender: 'linux' } %>
+  <h3>MacOS</h3>
+  <h3>Windows</h3>
+  <h3>Linux</h3>
+</div>
+<div class="select-gender">
+  <div class="gender-pick" data-gender="macos">
+    <%= image_tag 'apple' %>
+    <p class="select-text os-pick">That shiny new apple was a bit expensive but is seems to be a great weapon</p>
+  </div>
+  <div class="gender-pick" data-gender="window">
+    <%= image_tag 'window' %>
+    <p class="select-text os-pick">A window is nice, doesn’t matter if it works or not, you can always see through it
+    </p>
+  </div>
+  <div class="gender-pick" data-gender="linux">
+    <%= image_tag 'penguin' %>
+    <p class="select-text os-pick">That little penguin will be my friend for life, plus he let me do whatever I want
+      with him
+    </p>
+  </div>
 </div>
 
 <%= simple_form_for @student, url: registration_path(@student) do |f| %>
