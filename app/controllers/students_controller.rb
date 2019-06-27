@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
       @title = content[:title]
       @content = content[:body]
       @troubleshooting = content[:troubleshooting]
+      @tooltips = content[:tools]
       @total_steps = content[:total]
     else
       redirect_to root_path # TODO: redirect to a congrats page instead
