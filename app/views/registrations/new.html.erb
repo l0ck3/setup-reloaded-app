@@ -13,6 +13,7 @@
 </div>
 
 <%= simple_form_for @student, url: batch_registrations_path(@batch.slug) do |f| %>
+
   <%= f.input :gender, collection: Student::GENDERS, as: :radio_buttons, wrapper_html: { class: "hidden" } %>
   <%= f.label :full_name, 'Enter your (real) name'%>
   <%= f.input :full_name, label: false %>
