@@ -1,10 +1,18 @@
 <div class="navbar">
   <%= image_tag 'logo', class: 'logo' %>
+  <% completion_character = completion_percentage(student.steps.count, @total_steps) %>
+  <% completion_character = 7 if completion_percentage(student.steps.count, @total_steps) === 0 %>
   <div class="completion">
     <div class="completion-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
       style="width: <%= completion_percentage(student.steps.count, @total_steps)%>%"
       aria-valuenow="<%= student.steps.count %>" aria-valuemin="0" aria-valuemax="<%= @total_steps %>">
-    <%= image_tag "#{student.gender}_side", class: "tiny-student", style: "left: #{completion_percentage(student.steps.count, @total_steps)}%" %>
+    <div class="tiny-name" style="left: <%= completion_character %>%">
+      <%= student.full_name %></div>
+    <%= image_tag "#{student.gender}_side", class: "tiny-student", style: "left: #{completion_character}%" %>
+    <% case student.os %>
+    <% when 'MacOS'%>
+      <%= image_tag "apple", class: "tiny-os", style: "left: #{completion_character}%" %>
+    <% end %>
     </div>
   </div>
 </div>
