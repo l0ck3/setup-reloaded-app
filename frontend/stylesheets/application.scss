@@ -1,3 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'layout/layout';
+@import "commons";
+@import 'components/title';
+@import 'components/gender-pick';
 @import "components/button";
+
 @import "components/tool";
+
+@import "components/form";
+@import "components/navbar";
+
+body {
+  background-color: #F5F5F5;
+  font-family: 'Circular Medium'
+}

@@ -1,4 +1,4 @@
-<h1>BATCH DASHBOARD</h1>
+<h1>Batch dashboard</h1>
 
 <p>
   Share this link with the students:
@@ -12,14 +12,20 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Current Step</th>
+      <th>Last Completed Step</th>
+      <th>Progress</th>
     </tr>
   </thead>
   <tbody>
     <% @batch.students.each do |student| %>
       <tr>
         <td><%= student.full_name %></td>
-        <td><%= student.steps.count %></td>
+        <td><%= (last_step = student.steps.last) ? last_step['title'] : 'No step completed yet' %></td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: <%= completion_percentage(student.steps.count, @total_steps)%>%" aria-valuenow="<%= student.steps.count %>" aria-valuemin="0" aria-valuemax="<%= @total_steps %>"></div>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>

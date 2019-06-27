@@ -1,3 +1,5 @@
+<%= render 'navbar' %>
+
 <h1><%= @title %></h1>
 
 <%= @content.html_safe  %>
@@ -8,6 +10,8 @@
   <div class="flexbox-buttons">
     <%= link_to "I've completed this step!", students_path(step: 0), method: :patch, class: 'button button-green' %>
     <a href="#" class="problem">Problem ? Have a look at the most common issues</a>
+
+    <%= @troubleshooting.html_safe %>
   </div>
 
 

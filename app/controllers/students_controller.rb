@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
     if content.present?
       @title = content[:title]
       @content = content[:body]
+      @troubleshooting = content[:troubleshooting]
     else
       redirect_to root_path # TODO: redirect to a congrats page instead
     end
@@ -15,8 +16,9 @@ class StudentsController < ApplicationController
 
   # TODO: Implement this better when we'll not be in a rush
   def update
-    @step = params[:step]
-    current_student.steps << @step
+    @step = params[:step].to_i
+    content = FetchContentService.new.(current_student.os, @step)
+    current_student.steps << {title: content[:title] }
     current_student.save!
 
     redirect_to edit_students_path
