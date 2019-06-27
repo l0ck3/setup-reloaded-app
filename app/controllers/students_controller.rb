@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
       @title = content[:title]
       @content = content[:body]
       @troubleshooting = content[:troubleshooting]
+      @button = content[:button]
       @tooltips = content[:tools]
       @total_steps = content[:total]
     else
