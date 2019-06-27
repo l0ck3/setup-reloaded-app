@@ -18,7 +18,7 @@ class FetchContentService
     content = open(step_info['link']) { |f| f.read }
     troubleshooting = (tbs = step_info['troubleshooting']).present? ? open(step_info['troubleshooting']) { |f| f.read } : ''
     tooltips = (tool = step_info['tools']).present? ? open(step_info['tools']) { |f| f.read } : ''
-    button = (buttons = step_info['button']).present? ? open(step_info['button']) { |f| f.read } : ''
+    button = step_info['button']
 
     {
       title: step_info['name'],

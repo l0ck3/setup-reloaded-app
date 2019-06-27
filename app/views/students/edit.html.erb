@@ -11,7 +11,7 @@
     </a>
   </div>
   <div class="flexbox-buttons">
-    <%= link_to @button, students_path(step: 0), method: :patch, class: 'button button-green' %>
+    <%= link_to @button, students_path(step: @step), method: :patch, class: 'button button-green' %>
     <button type="button" class="btn problem" data-toggle="modal" data-target="#exampleModal">Problem ? Have a look at the most common issues</button>
   </div>
 
