@@ -1,6 +1,6 @@
 /* eslint no-console:0 */
 
-// import 'bootstrap';
+import 'bootstrap';
 // import 'stylesheets/application';
 
 document.addEventListener('DOMContentLoaded', () => {
