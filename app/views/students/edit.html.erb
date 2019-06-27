@@ -1,17 +1,34 @@
 <%= render 'navbar' %>
 
-<h1><%= @title %></h1>
-
 <%= @content.html_safe  %>
 
-
-
-  <div tooltip=“TEXT” tooltip_position="left"><a href="#" class="question">?</a></div>
+  <div class="tooltips">
+    <a href="#" class="question" tooltip="Some more information about this step" tooltip_position="left">
+      <span class="questionmark">?</span>
+    </a>
+  </div>
   <div class="flexbox-buttons">
-    <%= link_to "I've completed this step!", students_path(step: 0), method: :patch, class: 'button button-green' %>
-    <a href="#" class="problem">Problem ? Have a look at the most common issues</a>
-
-    <%= @troubleshooting.html_safe %>
+    <%= link_to @title, students_path(step: 0), method: :patch, class: 'button button-green' %>
+    <button type="button" class="btn problem" data-toggle="modal" data-target="#exampleModal">Problem ? Have a look at the most common issues</button>
   </div>
 
 
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Common problems</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= @troubleshooting.html_safe %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="button button-blue">Thanks for the help!</button>
+      </div>
+    </div>
+  </div>
+</div>
