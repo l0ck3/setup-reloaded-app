@@ -17,11 +17,13 @@ class FetchContentService
 
     content = open(step_info['link']) { |f| f.read }
     troubleshooting = (tbs = step_info['troubleshooting']).present? ? open(step_info['troubleshooting']) { |f| f.read } : ''
+    tooltips = (tool = step_info['tools']).present? ? open(step_info['tools']) { |f| f.read } : ''
 
     {
       title: step_info['name'],
       body: Kramdown::Document.new(content).to_html,
       troubleshooting: Kramdown::Document.new(troubleshooting).to_html,
+      tools: tooltips,
       total: os_steps.count
     }
   end

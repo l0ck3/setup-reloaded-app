@@ -42,7 +42,6 @@
 
   [tooltip]::after {
       content: attr(tooltip);
-      white-space: pre;
       position: absolute;
       left:50%;
       top:-6px;
@@ -53,6 +52,8 @@
       // padding:4px 2px;
       font-size: 14px;
       min-width: 180px;
+      width: 650px;
+      overflow: hidden;
       border-radius: 5px;
       pointer-events: none;
       padding: 4px 4px;
