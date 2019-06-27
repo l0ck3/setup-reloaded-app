@@ -1,7 +1,7 @@
 /* eslint no-console:0 */
 
-import 'bootstrap';
-import 'stylesheets/application';
+// import 'bootstrap';
+// import 'stylesheets/application';
 
 document.addEventListener('DOMContentLoaded', () => {
   const selectGender = (pick) => {
