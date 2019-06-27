@@ -1,8 +1,9 @@
-<%= render 'navbar' %>
+<%= render 'navbar', student: @student %>
 
 <h1><%= @title %></h1>
-
-<%= @content.html_safe  %>
+<div class="markup-content">
+  <%= @content.html_safe  %>
+</div>
 
 
   <a href="#" class="question">?</a>

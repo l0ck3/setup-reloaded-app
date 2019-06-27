@@ -1,3 +1,10 @@
 <div class="navbar">
-<%= image_tag 'logo', class: 'logo' %>
-% OF PROGRESS : 0</div>
+  <%= image_tag 'logo', class: 'logo' %>
+  <div class="completion">
+    <div class="completion-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+      style="width: <%= completion_percentage(student.steps.count, @total_steps)%>%"
+      aria-valuenow="<%= student.steps.count %>" aria-valuemin="0" aria-valuemax="<%= @total_steps %>">
+    <%= image_tag "#{student.gender}_side", class: "tiny-student", style: "left: #{completion_percentage(student.steps.count, @total_steps)}%" %>
+    </div>
+  </div>
+</div>
