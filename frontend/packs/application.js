@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectGender = (pick) => {
     const selected = pick.currentTarget.dataset.gender
     pick.currentTarget.classList.toggle('selected-gender')
+    const selectedNode = pick.currentTarget
+    const allGender = document.querySelectorAll('.gender-pick')
+    allGender.forEach((gender) => {
+      if (gender != selectedNode && gender.classList.contains('selected-gender')) { gender.classList.remove('selected-gender')}
+    })
     const radioGender = document.querySelector(`#student_gender_${selected}`)
-    if (radioGender) { radioGender.checked = true }
+    if (radioGender) {
+      radioGender.checked = true
+    }
     const osPicked = document.querySelector(`#student_os_${selected}`)
     if (osPicked) { osPicked.checked = true }
 

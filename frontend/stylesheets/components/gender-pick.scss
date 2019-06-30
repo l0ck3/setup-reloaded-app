@@ -1,7 +1,29 @@
+@keyframes up-and-down {
+  0%   {transform: translateY(0px);}
+  50%  {transform: translateY(10px);}
+  100% {transform: translateY(0px);}
+}
+
 .gender-pick {
   width: 10%;
+  img:hover {
+    animation-name: up-and-down;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    // animation-delay: 2s;
+    animation-iteration-count: infinite;
+    // animation-direction: alternate;
+  }
 }
 
 .selected-gender {
   border: 3px solid #79E15F;
+}
+
+.gender-shadow {
+  background-color: lightgrey;
+  height: 20px;
+  border-radius: 95%;
+  width: 100px;
+  margin: -10px auto;
 }
